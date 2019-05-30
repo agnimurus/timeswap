@@ -1,17 +1,19 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'components/logo_image.dart';
 import 'assets.dart';
 import 'animation.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/animation.dart';
 import 'dart:async';
-import 'components/SignUpLink.dart';
-import 'components/Form.dart';
-import 'components/SignInButton.dart';
-import 'components/WhiteTick.dart';
+import 'components/form.dart';
+
 import 'package:flutter/services.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
+
+import 'components/sign_in_button.dart';
+import 'components/sign_up_link.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key key}) : super(key: key);
@@ -99,9 +101,9 @@ class LoginScreenState extends State<LoginScreen>
                           new Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              new Tick(image: logo),
-                              new FormContainer(),
-                              new SignUp()
+                              LogoWidget(image: logo),
+                              FormContainer(),
+                              SignUp()
                             ],
                           ),
                           animationStatus == 0
@@ -114,7 +116,7 @@ class LoginScreenState extends State<LoginScreen>
                                         });
                                         _playAnimation();
                                       },
-                                      child: new SignIn()),
+                                      child: SignIn()),
                                 )
                               : new StaggerAnimation(
                                   buttonController: _loginButtonController.view,
