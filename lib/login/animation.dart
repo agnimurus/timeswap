@@ -78,6 +78,7 @@ class StaggerAnimation extends StatelessWidget {
   }
 
   /// non-private for easier testing
+  /// The container for the transition animation
   Widget getAnimationContainer(bool isZoomStart) => Padding(
         padding: isZoomStart
             ? EdgeInsets.only(bottom: config['circle']['begin'])
