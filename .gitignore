@@ -75,3 +75,4 @@
 # Git Secret -- https://git-secret.io/
 .gitsecret/keys/random_seed
 !*.secret
+/cfg/env.json
