@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'assets.dart';
 import 'animation.dart';
@@ -21,11 +23,15 @@ class LoginScreenState extends State<LoginScreen>
     with TickerProviderStateMixin {
   AnimationController _loginButtonController;
   var animationStatus = 0;
+  var animationConfig;
   @override
   void initState() {
     super.initState();
     _loginButtonController = new AnimationController(
         duration: new Duration(milliseconds: 3000), vsync: this);
+    DefaultAssetBundle.of(context)
+        .loadString("cfg/login/animation.json")
+        .then((config) => animationConfig = json.decode(config));
   }
 
   @override
@@ -93,9 +99,9 @@ class LoginScreenState extends State<LoginScreen>
                           new Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Tick(image: logo),
-                              FormContainer(),
-                              SignUp()
+                              new Tick(image: logo),
+                              new FormContainer(),
+                              new SignUp()
                             ],
                           ),
                           animationStatus == 0
@@ -111,8 +117,10 @@ class LoginScreenState extends State<LoginScreen>
                                       child: new SignIn()),
                                 )
                               : new StaggerAnimation(
-                                  buttonController:
-                                      _loginButtonController.view),
+                                  buttonController: _loginButtonController.view,
+                                  signInOnPressed: () {},
+                                  config: animationConfig,
+                                ),
                         ],
                       ),
                     ],
