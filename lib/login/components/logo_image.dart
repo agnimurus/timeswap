@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Tick extends StatelessWidget {
+class LogoWidget extends StatelessWidget {
   final DecorationImage image;
-  Tick({this.image});
+  LogoWidget({this.image});
   @override
   Widget build(BuildContext context) {
     return (new Container(
