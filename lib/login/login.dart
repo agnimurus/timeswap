@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:logging/logging.dart';
 import 'components/logo_image.dart';
 import 'assets.dart';
 import 'animation.dart';
@@ -14,6 +15,8 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 
 import 'components/sign_in_button.dart';
 import 'components/sign_up_link.dart';
+
+Logger _log = Logger('login');
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key key}) : super(key: key);
@@ -31,15 +34,22 @@ class LoginScreenState extends State<LoginScreen>
     super.initState();
     _loginButtonController = new AnimationController(
         duration: new Duration(milliseconds: 3000), vsync: this);
-    DefaultAssetBundle.of(context)
-        .loadString("cfg/login/animation.json")
-        .then((config) => animationConfig = json.decode(config));
+    loadLoginConfig();
   }
 
   @override
   void dispose() {
     _loginButtonController.dispose();
     super.dispose();
+  }
+
+  Future loadLoginConfig() async {
+    DefaultAssetBundle.of(context)
+        .loadString("config/login/animation.json")
+        .then((config) {
+      _log.info('config:\n$config');
+      animationConfig = json.decode(config);
+    });
   }
 
   Future<Null> _playAnimation() async {
