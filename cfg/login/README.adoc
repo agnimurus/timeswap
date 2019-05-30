@@ -1,0 +1,27 @@
+= Login Configuration
+Pujit Mehrotra <pujitm2009@gmail.com>
+05-29-2019 (mm/dd/yyyy)
+:appVersion: 0.1.2
+
+_App Version (semver) v{appVersion}_
+
+== Animation
+
+=== button
+[[button-animation]]
+
+Configuration for button animation
+
+`squeezeAnimation` and `zoom` set the beginning and ending doubles that the animation eases between.
+
+The timing of the easing is determined by the `curve` object.
+
+=== circle
+
+See the xref:button-animation[button] section
+
+=== hero
+
+tag: an app-wide unique `Hero` tag -> used to animate between two widgets with same tag
+
+`zoomOutThreshold`: below this threshold, the login page hasn't completely zoomed out yet
