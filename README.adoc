@@ -1,12 +1,13 @@
 = TimeSwap
 Pujit Mehrotra <pujitm2009@gmail.com>
-05-29-2019 (mm/dd/yyyy)
+05-31-2019 (mm/dd/yyyy)
 :appVersion: 0.1.2
 
 _App Version (semver) v{appVersion}_
 
 A marketplace for peer-to-peer services in local communities
 
-== Getting Started
+== Reproducing Issue #2
 
-WIP
+After connecting a physical device, run `flutter run` and tap on a text input field.
+The keyboard will not pop up.
