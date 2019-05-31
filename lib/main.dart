@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_driver/driver_extension.dart';
-import 'input_field.dart';
 
 void main() {
   // Enable integration testing with the Flutter Driver extension.
@@ -16,7 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: MyHomePage(title: "Issue #2 Reproduction",),
+      home: MyHomePage(
+        title: "Issue #2 Reproduction",
+      ),
     );
   }
 }
@@ -45,22 +46,24 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  InputFieldArea(
-                    hint: "Username",
-                    obscure: false,
-                    icon: Icons.person_outline,
+                  TextFormField(
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: "Username",
+                    ),
                   ),
-                  InputFieldArea(
-                    hint: "Password",
-                    obscure: true,
-                    icon: Icons.lock_outline,
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      hintText: "Password",
+                    ),
                   ),
                 ],
               ),
             )
           ],
         ),
-      ),// This trailing comma makes auto-formatting nicer for build methods.
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
