@@ -12,11 +12,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:timeswap/main.dart';
 
 void main() {
-
-  test('login config test', () async {
-    String config = await rootBundle.loadString('config/login/animation.json');
-    assert(config != null && config.isNotEmpty);
-  });
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // TODO Implement
   });
