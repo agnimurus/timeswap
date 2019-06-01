@@ -1,0 +1,46 @@
+{
+  "button": {
+    "squeezeAnimation": {
+      "begin": 320.0,
+      "end": 70.0,
+      "threshold": 75.0,
+      "curve": {
+        "begin": 0.0,
+        "end": 0.150
+      }
+    },
+    "zoom": {
+      "begin": 70.0,
+      "end": 1000.0,
+      "threshold": 300,
+      "curve": {
+        "begin": 0.550,
+        "end": 0.999
+      }
+    }
+  },
+  "circle": {
+    "begin": 50.0,
+    "end": 0.0,
+    "curve": {
+      "begin": 0.500,
+      "end": 0.800
+    }
+  },
+  "hero": {
+    "tag": "fade",
+    "radius": {
+      "threshold": 400,
+      "length": 30.0
+    },
+    "init": {
+      "height": 60.0
+    }
+  },
+  "areaColor": {
+    "red": 247,
+    "green": 64,
+    "blue": 106,
+    "alpha": 1.0
+  }
+}
