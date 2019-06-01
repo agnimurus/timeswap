@@ -1,0 +1,20 @@
+= Testing TimeSwap
+Pujit Mehrotra <pujitm2009@gmail.com>
+06-01-2019 (mm/dd/yyyy)
+:appVersion: 0.1.2
+
+_App Version (semver) v{appVersion}_
+
+A marketplace for peer-to-peer services in local communities
+
+== Unit Testing
+
+Under `test/`
+
+`flutter test`
+
+== Integration Testing
+
+Under `test_driver/`
+
+`flutter drive --target=test_driver/app.dart`
